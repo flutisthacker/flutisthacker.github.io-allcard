@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 100vw;
+    height: 100vh;
+    background-color: #aaa;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main_card {
+    width: 20rem;
+    height: 20rem;
+    margin: 20px;
+    background-color: #16161d;
+    color: white;
+    font-size: 40px;
+    z-index: 10;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, .5);
+  }
+
+  .drop_card {
+    width: 20rem;
+    height: 20rem;
+    background: linear-gradient(-250deg, rgb(100, 181, 34), #29ABE2);
+    position: absolute;
+    /* bottom: 170px; */
+    transform: translateY(-320px);
+
+    font-family: 'Times New Roman', Arial, sans-serif;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 40px;
+    font-weight: 700;
+    transition: transform .8s ease, opacity .9s ease, height .5s ease-in-out;
+    opacity: 0;
+  }
+
+  .main_card:hover {
+    box-shadow: none;
+  }
+
+  .main_card:hover>.drop_card {
+    transform: translateY(10px);
+    opacity: 1;
+    height: 10rem;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, .5);
+
+  }
+
+  .youtube_card {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d93025;
+    transition: .3s;
+  }
+
+  .twitter_card {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1DA1F2;
+    transition: .3s;
+
+  }
+
+  .fb_card {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3b5998;
+    transition: .3s;
+
+  }
+
+  .youtube_card:hover {
+    font-size: 20px;
+    color: #d93025;
+    background-color: white
+  }
+
+  .twitter_card:hover {
+    font-size: 20px;
+    color: #1DA1F2;
+    background-color: white
+  }
+
+  .fb_card:hover {
+    font-size: 20px;
+    color: #3b5998;
+    background-color: white
+  }
+</style>
+
+
+
+<body>
+  <div class="card">
+    <div class="main_card">
+      <div class="youtube_card ">
+        <i class="fab fa-2x fa-youtube"></i>
+      </div>
+      <span class="drop_card ">Watch our videos</span>
+    </div>
+    <div class="main_card">
+
+      <div class="twitter_card">
+        <i class="fab fa-2x fa-twitter"></i>
+      </div>
+      <span class="drop_card">Read our tweets</span>
+    </div>
+    <div class="main_card">
+
+      <div class="fb_card">
+        <i class="fab fa-2x fa-facebook"></i>
+      </div>
+      <span class="drop_card ">Share your thoughts</span>
+    </div>
+  </div>
+
+</body>
+
+</html>

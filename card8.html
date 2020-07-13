@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+<style>
+  .container {
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(100vw/4);
+    min-height: 300px;
+    max-height: 400px;
+    max-width: 1500px;
+    width: 95%;
+    padding: 20px
+  }
+
+  /* https://www.instagram.com/p/CBdWs5PAuNy/ */
+  .image {
+    background-image: url("cat1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 49%;
+  }
+
+  .description {
+    width: 49%;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+  @media (max-width:800px) {
+
+    .container {
+      display: block;
+      height: auto;
+      max-height: 100%;
+    }
+
+    .image,
+    .description {
+      width: 100%;
+    }
+
+    .image {
+      height: 400px
+    }
+  }
+</style>
+<style>
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  .main p {
+    font-size: 3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: text-shadow .5s ease;
+  }
+
+  .main p:hover {
+    text-shadow: 1px 1px 1px rgb(255, 98, 98), 1px 2px 1px rgb(255, 98, 98),
+      1px 3px 1px rgb(255, 98, 98), 1px 4px 1px rgb(255, 98, 98), 1px 5px 1px rgb(255, 98, 98), 1px 6px 1px rgb(255, 98, 98),
+      1px 7px 1px rgb(255, 98, 98), 1px 8px 1px rgb(255, 98, 98), 1px 9px 1px rgb(255, 98, 98), 1px 10px 1px rgb(255, 98, 98), 1px 20px 4px rgb(63, 63, 63), 1px 22px 5px rgb(63, 63, 63), 1px 24px 6px rgb(63, 63, 63), 1px 26px 7px rgb(63, 63, 63);
+  }
+
+  /* https: //www.instagram.com/p/CBqXrllgnsZ/ */
+  .btns {
+    width: 150px;
+    height: 50px;
+    display: block;
+    background: transparent;
+    border: none;
+    box-shadow: 2px 2px 2px 2px gray;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .btns::after {
+    content: '';
+    position: absolute;
+    background: red;
+    width: inherit;
+    height: inherit;
+    z-index: -2;
+    transform: scaleX(.1);
+    transform-origin: left;
+    bottom: 180px;
+    left: 825px;
+  }
+
+  .btns:hover::after {
+    animation: scales .5s ease-in-out forwards;
+  }
+
+  .btns:hover {
+    color: white;
+  }
+
+  @keyframes scales {
+    from {
+      transform: scaleX(.1);
+    }
+
+    to {
+      transform: scaleX(1);
+    }
+  }
+</style>
+<style>
+
+</style>
+
+<body>
+  <div class="main">
+    <p>saman maharjan</p>
+    <p><i class="fas fa-user"></i> Flutist Hacker</p>
+    <p><i class="fab fa-facebook"></i> SANUGA</p>
+    <button class="btns">Click me</button>
+  </div>
+  <div class="container">
+    <div class="image">
+      <div class="description">
+        <h2>big title here</h2>
+        <p>put some text here</p>
+        <p>put some text here</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <p id="content">click the icon to copy</p>
+    <i onclick="copy()" class="far fa-copy"></i>
+  </div>
+  <div class="box"><input type="text" id="pastehere">
+    <i class="fas fa-paste" id="pastebtn"></i>
+  </div>
+</body>
+
+<script>
+  function copy() {
+    var content = document.getElementById('content').innerHTML;
+    var textare = document.createElement('textarea')
+    textare.value = content
+    textare.setAttribute('readonly', '')
+    textare.style = {
+      position: 'absolute',
+      left: '-9999px'
+    }
+    document.querySelector('body').appendChild(textare);
+    textare.select()
+    document.execCommand('copy');
+    alert('copied')
+    document.querySelector('body').removeChild(textare)
+  }
+
+  function paste() {
+    var container = document.getElementById('pastehere').innerHTML;
+    var textare = document.createElement('textarea')
+    textare.value = content
+    textare.setAttribute('readonly', '')
+    textare.style = {
+      position: 'absolute',
+      left: '-9999px'
+    }
+    document.querySelector('body').appendChild(textare);
+    textare.select()
+    document.execCommand('copy');
+    alert('copied')
+    document.querySelector('body').removeChild(textare)
+  }
+
+  function handlePaste(e) {
+    var clipboardData, pastedData;
+
+    // Stop data actually being pasted into div
+    e.stopPropagation();
+    e.preventDefault();
+
+    // Get pasted data via clipboard API
+    clipboardData = e.clipboardData || window.clipboardData;
+    pastedData = clipboardData.getData('Text');
+
+    // Do whatever with pasteddata
+    alert(pastedData);
+  }
+  document.getElementById('pastebtn').addEventListener('paste', handlePaste);
+</script>
+
+</html>

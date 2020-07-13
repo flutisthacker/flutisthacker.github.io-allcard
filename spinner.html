@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="spinner.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="rain.css" />
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div class="rain raining">
+    <div class="main">
+      <h2 class="main-text">Hello, welcome to my website</h2>
+      <p class="main-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, culpa consequuntur
+        repudiandae minus blanditiis explicabo asperiores vero? Magnam, eaque placeat illum id corporis enim reiciendis
+        possimus modi cum, iste iure.</p>
+    </div>
+    <!-- <div class="spinner3"></div> -->
+
+    <!-- <div class="box">
+      <div class="b b1"></div>
+      <div class="b b2"></div>
+      <div class="b b3"></div>
+      <div class="b b4"></div>
+    </div> -->
+
+    <div class="unbox">
+      <div class="be be1"></div>
+      <div class="be be2"></div>
+      <div class="be be3"></div>
+      <div class="be be4"></div>
+    </div>
+  </div>
+  <script>
+    document.querySelector('.main .main-paragraph').style.display = "none";
+    document.querySelector('.main').classList.add('spinner2');
+
+    //settime out
+    setTimeout(() => {
+      document.querySelector('.main').classList.remove('spinner2');
+      document.querySelector('.main .main-paragraph').style.display = "block";
+
+    }, 4000);
+  </script>
+
+</body>
+
+</html>

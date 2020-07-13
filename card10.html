@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ee6d6d;
+    /* 119292 */
+  }
+
+  .container ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    box-shadow: 3px 3px 25px 15px gray;
+  }
+
+  .container ul li {
+    margin: 25px;
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    background: #16161d;
+    padding: 25px;
+  }
+
+  .container ul li i {
+    font-size: 5rem;
+    color: #ee6d6d;
+    padding: 20px;
+    transition: all .9s ease;
+    /* animation: fade-down .9s ease forwards; */
+    border-radius: 50%;
+    transform: translateY(-150%);
+    opacity: 0;
+  }
+
+
+  .container ul:hover li i {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  .container ul li:hover i {
+    color: #119292;
+  }
+
+  .container ul li:nth-child(1) i {
+    transition-delay: .3s;
+    /* color: red; */
+  }
+
+  .container ul li:nth-child(2) i {
+    transition-delay: .5s;
+    /* color: green; */
+  }
+
+  .container ul li:nth-child(3) i {
+    transition-delay: .7s;
+  }
+
+  .container ul li:nth-child(4) i {
+    transition-delay: .9s;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <ul>
+      <li><i class="fab fa-facebook-messenger"></i></li>
+      <li><i class="fab fa-instagram"></i></li>
+      <li><i class="fab fa-twitter"></i></li>
+      <li><i class="fab fa-snapchat"></i></li>
+    </ul>
+  </div>
+</body>
+
+</html>

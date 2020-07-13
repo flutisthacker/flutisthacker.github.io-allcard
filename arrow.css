@@ -1,0 +1,75 @@
+.arrow {
+  font-size: 4rem;
+  text-align: center;
+  transform: rotate(.5turn);
+  animation: bounceArrow 1s infinite;
+  color: #ffc728;
+  position: relative;
+  /* background: #3498db; */
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 80px;
+  float: right;
+}
+
+@keyframes bounceArrow {
+  0% {
+    top: 0%;
+  }
+
+  50% {
+    top: 20px;
+    color: black;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+.arrow_section {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: repeating-linear-gradient(to right, black, red);
+}
+
+.tir {
+  color: red;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-color: #80e1d8;
+  border-width: 0 15px 15px 0;
+  display: inline-block;
+  padding: 30px;
+}
+
+.tir:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, .8);
+}
+
+.top-arrow {
+  top: 30%;
+  left: 30%;
+  transform: rotate(-135deg);
+}
+
+.bottom-arrow {
+  top: 70%;
+  left: 30%;
+  transform: rotate(45deg);
+}
+
+.right-arrow {
+  top: 50%;
+  left: 40%;
+  transform: rotate(-45deg);
+}
+
+.left-arrow {
+  top: 50%;
+  left: 20%;
+  transform: rotate(135deg);
+}

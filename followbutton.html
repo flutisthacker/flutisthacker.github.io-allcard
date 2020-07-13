@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+
+  }
+
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .center ul {
+    list-style: none;
+    position: relative;
+    display: inline-block;
+  }
+
+  .center ul .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    line-height: 50px;
+    background: #1f7a7a;
+    color: #eee;
+    pointer-events: none;
+    font-size: 22px;
+  }
+
+  .center ul:hover .text {
+    opacity: 0;
+    transition: opacity .5s .125s ease-out;
+  }
+
+
+  .center ul li {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background: #1f7a7a;
+    margin: 0 -16px;
+    cursor: pointer;
+    border-radius: 0;
+    transition: background-color .5s ease-out, border-radius .5s .25s ease-out, margin .25s ease-out;
+  }
+
+  .center ul li:hover {
+    background-color: #1a6565;
+  }
+
+  .center ul li i {
+    color: #eee;
+    font-size: 22px;
+    opacity: 0;
+    transition: opacity 1.7s;
+    line-height: 50px;
+  }
+
+  .center ul:hover li i {
+    opacity: 1;
+  }
+
+  .center ul li:nth-child(1) {
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+  }
+
+  .center ul li:nth-child(5) {
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+  }
+
+  .center ul:hover li {
+    margin: 0 3px;
+    border-radius: 50px;
+  }
+</style>
+
+<style>
+  .buttons {
+    width: 100%;
+    height: 500px;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .button {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+  }
+
+  .space {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    background-color: red;
+    transition: .8s ease;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .4));
+  }
+
+  .space:hover {
+    border-radius: 50%;
+    transform: rotate(360deg);
+  }
+
+  .space:hover~.fab {
+    font-size: 40px;
+  }
+
+  .fab {
+    color: white;
+    z-index: 3;
+    transition: .8s ease;
+  }
+</style>
+<style>
+  .container {
+    width: 700px;
+    min-height: 900px;
+    background-image: url("/cssPractice/alina.jpg");
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-size: cover;
+  }
+
+  .brightness-box,
+  .blur-box {
+    width: 400px;
+    height: 60px;
+    background-color: #f9f9f9;
+    padding: 0 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brightness-box i,
+  .blur-box i {
+    margin: 0 10px;
+  }
+
+  #range,
+  #range2 {
+    width: 100%;
+    appearance: none;
+    background: #0a85ff;
+    height: 3px;
+    outline: none;
+  }
+
+  #range::-webkit-slider-thumb,
+  #range2::-webkit-slider-thumb {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: #333;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+</style>
+
+
+<body>
+  <div class="container">
+    <div class="brightness-box">
+      <i class="far fa-sun"></i>
+      <input type="range" min="10" max="100" value="100" id="range">
+      <i class="fas fa-sun"></i>
+    </div>
+    <div class="blur-box">
+      <i class="far fa-sun"></i>
+      <input type="range" min="10" max="100" value="100" id="range2">
+      <i class="fas fa-sun"></i>
+    </div>
+  </div>
+
+  <div class="center">
+    <ul>
+      <li><i class="fab fa-facebook"></i></li>
+      <li><i class="fab fa-twitter"></i></li>
+      <li><i class="fab fa-instagram"></i></li>
+      <li><i class="fab fa-linkedin-in"></i></li>
+      <li><i class="fab fa-youtube"></i></li>
+      <div class="text">Share <i class="fa fa-share"></i></div>
+    </ul>
+  </div>
+
+  <div class="buttons">
+    <div class="button">
+      <span class="space"></span>
+      <i class="fab fa-facebook"></i>
+    </div>
+    <div class="button">
+
+      <span class="space"></span>
+      <i class="fab fa-instagram"></i>
+    </div>
+    <div class="button">
+      <span class="space"></span>
+      <i class="fab fa-youtube"></i>
+    </div>
+  </div>
+
+
+  <script>
+    rangeI = document.getElementById('range');
+    rangeJ = document.getElementById('range2');
+    container = document.getElementsByClassName('container')[0];
+    rangeI.addEventListener('change', () => {
+      container.style.filter = "brightness(" + rangeI.value + "%)"
+      rangeI.style.filter = "brightness(100%)"
+    });
+    rangeJ.addEventListener('change', () => {
+      // container.style.filter = "contrast(" + rangeJ.value + "%)"
+      container.style.filter = "grayscale(" + rangeJ.value + "%)"
+      container.style.filter = "invert(" + rangeJ.value + "%)"
+      //       blur(2.px)
+      // brightness()
+      // contrast()
+      // drop-shadow()
+      // grayscale(%)
+      // hue-rotate()
+      // invert()
+      // opacity()
+      // saturate()
+      // sepia()
+      // url() – for applying SVG filters
+      // custom()
+    });
+  </script>
+</body>
+
+</html>

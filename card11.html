@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../cssPractice/cat6.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* background: #ee6d6d; */
+    /* 119292 */
+  }
+
+  .container {
+    position: relative;
+    width: 450px;
+    height: 360px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 3px 3px 25px 15px gray;
+
+  }
+
+  nav {
+    height: 100%;
+    width: 150px;
+    background: #22bbee;
+    color: #f2f2f2;
+    position: absolute;
+    left: 0;
+  }
+
+  nav ul li {
+    list-style: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700px;
+    border-radius: 50%;
+    padding: 25px;
+    transition: .1s;
+  }
+
+  nav ul li i {
+    color: #ee6d6d;
+    padding-right: 5px;
+    /* animation: fade-down .9s ease forwards; */
+    border-radius: 50%;
+  }
+
+
+
+  .container ul li:hover i {
+    color: #119292;
+  }
+
+  .content {
+    color: black;
+    position: absolute;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    border: 6px solid #189bc7;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+  }
+
+  .content hr {
+    width: 100%;
+    height: 2px;
+    border: 0;
+    border-radius: 50%;
+    background: #22bbee;
+    margin: 10px auto
+  }
+
+  @keyframes scale {
+    from {
+      transform: scale(0)
+    }
+
+    to {
+      transform: scale(1)
+    }
+  }
+
+  .content p {
+    font-weight: bold
+  }
+
+  #home {
+    background: #189bc7
+  }
+</style>
+
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li class="nav-item" id="home" onclick="clicked(home)"><i class="fas fa-home"></i><a href="">home</a></li>
+        <li class="nav-item" id="clients" onclick="clicked(clients)"><i class="fas fa-user"></i><a href="">clients</a>
+        </li>
+        <li class="nav-item" id="editor" onclick="clicked(editor)"><i class="fas fa-edit"></i><a href="">editor</a></li>
+        <li class="nav-item" id="design" onclick="clicked(design)"><i class="fas fa-code"></i><a href="">design</a></li>
+        <li class="nav-item" id="setting" onclick="clicked(setting)"><i class="fas fa-cog"></i><a href="">setting</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="content">
+      <h1>home</h1>
+      <hr>
+      <p>home-content</p>
+    </div>
+  </div>
+</body>
+<script>
+  let item = document.querySelector('#home')
+  const hr = document.querySelector('.content hr')
+
+  function clicked(tabs) {
+    hr.style.animation = '.4s scal infinite'
+    setTimeout(() => {
+      hr.style.animation = "none"
+    }, 400);
+    item.style.background = "#22bbee";
+    const tab = document.querySelector(`#${tabs}`);
+    tab.style.background = "#189bc7"
+    const title = document.querySelector('.content h1');
+    title.innerHTML = `${tabs}`
+    const content = document.querySelector('.content p');
+    content.innerHTML = `${tabs}-Content`
+    item = document.querySelector(`${tabs}`);
+  }
+</script>
+
+</html>
